@@ -42,4 +42,9 @@ class Preset extends LaravelPreset
     {
         File::copyDirectory(__DIR__.'/stubs/views', resource_path('views'));
     }
+
+    protected static function addLanguage()
+    {
+        copy(__DIR__.'/stubs/lang/en/auth.php', resource_path('assets/js/app.js'));
+    }
 }
