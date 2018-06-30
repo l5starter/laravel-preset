@@ -19,9 +19,8 @@ class Preset extends LaravelPreset
     {
         return array_merge([
             'bootstrap' => '^4.0.0',
-            'laravel-mix' => '^2.0',
             'popper.js' => '^1.12'
-        ], Arr::except($packages, ['bootstrap-sass', 'laravel-mix']));
+        ], Arr::except($packages, ['bootstrap-sass']));
     }
 
     public static function updateScripts()
