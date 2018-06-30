@@ -6,7 +6,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Illuminate\Foundation\Console\Presets\Preset as LaravelPreset;
 
-class BootstrapPreset extends LaravelPreset
+class Preset extends LaravelPreset
 {
     public static function install()
     {

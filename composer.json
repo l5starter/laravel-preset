@@ -20,7 +20,7 @@
     },
     "extra": {
         "laravel": {
-            "providers": ["WiwatSrt\\LaravelPreset\\BootstrapPresetServiceProvider"]
+            "providers": ["WiwatSrt\\LaravelPreset\\PresetServiceProvider"]
         }
     }
 }
