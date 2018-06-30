@@ -13,6 +13,7 @@ class Preset extends LaravelPreset
         static::updatePackages();
         static::updateScripts();
         static::updateStyles();
+        static::updateAuth();
     }
 
     public static function updatePackageArray($packages)
@@ -25,15 +26,20 @@ class Preset extends LaravelPreset
 
     public static function updateScripts()
     {
-        copy(__DIR__.'/stubs/js/app.js', resource_path('assets/js/app.js'));
-        copy(__DIR__.'/stubs/js/bootstrap.js', resource_path('assets/js/bootstrap.js'));
+        copy(__DIR__.'/stubs/assets/js/app.js', resource_path('assets/js/app.js'));
+        copy(__DIR__.'/stubs/assets/js/bootstrap.js', resource_path('assets/js/bootstrap.js'));
     }
 
     public static function updateStyles()
     {
         File::cleanDirectory(resource_path('assets/sass'));
 
-        copy(__DIR__.'/stubs/sass/app.scss', resource_path('assets/sass/app.scss'));
-        copy(__DIR__.'/stubs/sass/_variables.scss', resource_path('assets/sass/_variables.scss'));
+        copy(__DIR__.'/stubs/assets/sass/app.scss', resource_path('assets/sass/app.scss'));
+        copy(__DIR__.'/stubs/assets/sass/_variables.scss', resource_path('assets/sass/_variables.scss'));
+    }
+
+    protected static function updateAuth()
+    {
+        File::copyDirectory(__DIR__.'/stubs/views', resource_path('views'));
     }
 }
