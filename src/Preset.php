@@ -14,6 +14,7 @@ class Preset extends LaravelPreset
         static::updateScripts();
         static::updateStyles();
         static::updateAuth();
+        static::addLanguage();
     }
 
     public static function updatePackageArray($packages)
@@ -45,6 +46,6 @@ class Preset extends LaravelPreset
 
     protected static function addLanguage()
     {
-        copy(__DIR__.'/stubs/lang/en/auth.php', resource_path('assets/js/app.js'));
+        copy(__DIR__.'/stubs/lang/en/auth.php', resource_path('lang/en/auth.php'));
     }
 }
